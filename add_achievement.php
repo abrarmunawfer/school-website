@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: admin_login.php");
+    exit;
+}
+?>
 <?php 
 	require 'config.php';
 	$msg="";
@@ -39,6 +46,8 @@
 		<div class="row">
 			<div class="col-md-6">
 				<h2 class="text-center">Add Achievement</h2>
+				<a href="logout.php" class="logout-btn">Logout</a>
+
 				<form action="" method="post" class="p-2" enctype="multipart/form-data" id="form-box">
 					<div class="form-group">
 						<input type="text" name="AName" class="form-control" placeholder="Title" required>

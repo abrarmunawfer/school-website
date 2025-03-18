@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: admin_login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,23 +14,6 @@
 </head>
 <body>
 
-	<nav class="topnav">
-		<div class="menu" id="topmenu">
-				<span id="navbar" style="font-size:30px;cursor:pointer; float: left; padding: 10px" onclick="openNav()" >&#9776;</span>
-		</div>
-
-		<div id="mySidenav" class="sidenav">
-
-	  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  		<a href="abr-admin-panel.php">Downloads</a>
-			<a href="admin-panel-2.php">Annual Events</a>
-			<a href="admin-panel-3.php">Acheivments</a>
-			<a href="admin-panel-4.php">Co-Curriculum Activity</a>
-			<a href="admin-panel-5.php">Slide Show</a>
-			<a href="admin-panel-6.php">News</a>
-			<a href="admin-panel-7.php">Video Gallary</a>
-  		</div>
-	</nav>
 
 	<aside id="main">
 		<?php 
@@ -31,6 +22,8 @@
 		$result = mysqli_query($conn,$sql);
 		 ?>
 		<h3>Add Or Remove Contents of Downloads</h3>
+		<a href="logout.php" class="logout-btn">Logout</a>
+
 		<button class="button">
 			<a href="add.php">Add Item</a>
 		</button><br>
