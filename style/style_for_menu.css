@@ -1,0 +1,110 @@
+/* General styles for the navigation bar */
+.nav {
+  background-color: white;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #0077cc;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+.topnav .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.topnav .dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #0077cc;
+  padding: 14px 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.topnav .dropdown:hover .dropbtn {
+  background-color: #0077cc;
+  color: white;
+}
+
+.topnav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.topnav .dropdown-content a {
+  color: #0077cc;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.topnav .dropdown-content a:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+/* Show dropdown when hovering over the parent dropdown */
+.topnav .dropdown:hover .dropdown-content {
+  display: block; /* Make it visible when hovering */
+}
+
+/* Mobile-friendly Styles */
+.icon, #menu-icon {
+  display: none; /* Hide the icon on large screens */
+}
+
+
+@media screen and (max-width: 768px) {
+  .topnav a { /* Hide all links except "Home" on small screens */
+      display: none;
+  }
+
+  .topnav a.icon, #menu-icon {
+      float: right;
+      display: block;
+  }
+
+  .topnav.responsive { /* When in responsive mode, the links show up */
+      position: relative;
+  }
+
+  .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+  }
+
+  .topnav.responsive .dropdown { /* Make dropdown menu expand in responsive view */
+      float: none;
+  }
+
+  .topnav.responsive .dropdown-content { 
+      position: relative;
+  }
+}
